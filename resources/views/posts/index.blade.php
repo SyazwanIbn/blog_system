@@ -23,12 +23,14 @@
                         <td>{{ $post->id }}</td>
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->content }}</td>
-                        <td>
+                        <td class="d-flex gap-2">
+                            {{-- button to edit post --}}
+                            <a href="/posts/{{ $post->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
                             {{-- button to delete post --}}
-                            <form action="/posts/{{ $posts->id }}/delete" method="POST">
+                            <form action="/posts/{{ $post->id }}/delete" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-primary">Delete</button>
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                             </form>
                         </td>
                     </tr>
