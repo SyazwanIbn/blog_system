@@ -5,7 +5,7 @@
         <h1 class="mb-4">Tambah post baru</h1>
 
         {{-- Form untuk tambah post baru --}}
-        <form action="/posts/store" method="POST">
+        <form action="{{ route('posts.store') }}" method="POST">
         @csrf
 
         <div class="mb-4">

@@ -25,7 +25,7 @@
                         <td>{{ $post->content }}</td>
                         <td>
                             {{-- button to delete post --}}
-                            <form action="/posts/{{ $posts->id }}/delete" method="POST">
+                            <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-primary">Delete</button>
